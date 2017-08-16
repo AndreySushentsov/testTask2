@@ -1,0 +1,28 @@
+.wrapper
+  header
+    .logo
+      h1.logo-title МОИ ЗАКАЗЫ
+    .sort
+        span.sort--span Сортировать: 
+        -var items = [{id:'date',sort:'по дате'},{id:'completed',sort:'по готовности'}];
+        ul.sort--list
+          each item in items
+            li.sort--item
+              a(href='#' id=`${item.id}`).sort--anchor=item.sort
+  main
+    .goods
+      ul.goods--list
+        each good in locals
+          li.goods--item
+            img(src='./assets/img/good_img.png' alt='good img').goods--img
+            h3.goods--title НАЗВАНИЕ ЗАКАЗА
+            ul.good--item_list
+              each x in good
+                li.good--sub_item
+                  if x.button
+                    a(href='#').goods--anchor 
+                      h3.goods--anchor_title=x.button
+                  else
+                    span.goods--span=x.title
+                    span.goods--span=x.value
+      a(href='#').goods--scroll НАВЕРХ

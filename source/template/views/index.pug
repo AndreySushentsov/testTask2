@@ -1,47 +1,9 @@
 doctype html
 html
   head
-    meta(charset="utf-8")
-    title test_task
-    meta(content="" name="author")
-    meta(content="" name="description")
-    meta(content="" name="keywords")
-    meta(content="width=device-width, initial-scale=1" name="viewport")
-    meta(content="ie=edge" http-equiv="x-ua-compatible")
-
-    //- favicon block start
-    //- favicon block end
-
-    link(rel='stylesheet' href='./assets/css/foundation.css')
-    link(rel='stylesheet' href='./assets/css/app.css')
-    link(rel='stylesheet' href='./assets/css/fonts.css')
+    include ../common/meta.pug
   body
-    .wrapper
-      header
-        .logo
-          h1.logo-title МОИ ЗАКАЗЫ
-        .sort
-            span.sort--span Сортировать: 
-            -var items = [{id:'date',sort:'по дате'},{id:'completed',sort:'по готовности'}];
-            ul.sort--list
-              each item in items
-                li.sort--item
-                  a(href='#' id=`${item.id}`).sort--anchor=item.sort
-      main
-        .goods
-          ul.goods--list
-            each good in locals
-              li.goods--item
-                img(src='./assets/img/good_img.png' alt='good img').goods--img
-                h3.goods--title НАЗВАНИЕ ЗАКАЗА
-                ul.good--item_list
-                  each x in good
-                    li.good--sub_item
-                      span.goods--span=x.title
-                      span.goods--span=x.value
-                      a(href='#').goods--anchor 
-                        h3.goods--anchor_title=x.button
-          a(href='#').goods--scroll НАВЕРХ
+    include ../common/main.pug
     footer
       include ../common/_footer.pug
     script(src='./assets/js/foundation.js' defer)
