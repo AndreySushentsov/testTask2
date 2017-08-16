@@ -1,0 +1,37 @@
+include ../common/_template.pug
+
+body
+  .wrapper
+    header
+      .logo
+        h1.logo-title МОИ ЗАКАЗЫ
+      .sort
+          span.sort--span Сортировать: 
+          -var items = [{id:'date',sort:'по дате'},{id:'completed',sort:'по готовности'}];
+          ul.sort--list
+            each item in items
+              li.sort--item
+                a(href='#' id=`${item.id}`).sort--anchor=item.sort
+    main
+      .goods
+        ul.goods--list
+          each good in locals
+            li.goods--item
+              img(src='./assets/img/good_img.png' alt='good img').goods--img
+              h3.goods--title НАЗВАНИЕ ЗАКАЗА
+              ul.good--item_list
+                each x in good
+                  li.good--sub_item
+                    span.goods--span=x.title
+                    span.goods--span=x.value
+                    a(href='#').goods--anchor 
+                      h3.goods--anchor_title=x.button
+        a(href='#').goods--scroll НАВЕРХ
+  footer
+    include ../common/_footer.pug
+  script(src='./assets/js/foundation.js' defer)
+  script(src='./assets/js/app.js' defer)
+  <!--[if lt IE 9]>
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+  <![endif]-->
+  script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")

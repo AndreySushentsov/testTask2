@@ -1,0 +1,14 @@
+.logo{
+  margin: 0 auto;
+  width: 307px;
+  height: 100px;
+  margin-top: 52px;
+  background: url('../img/logo_bg.png');
+  background-repeat: no-repeat;
+  position: relative;
+}
+.logo-title{
+  width: 74%;
+  font-size: 50px;
+  @include centred();
+}

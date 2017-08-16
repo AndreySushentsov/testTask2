@@ -1,0 +1,33 @@
+.sort{
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 6px;
+  @include tablet{
+    width: 40%;
+    text-align: center;
+  };
+  @include mobile{
+    width: 50%;
+  };
+}
+.sort--span{
+  float: left;
+  @include tablet{
+    float: none;
+
+  };
+}
+.sort--item{
+  display: inline-block;
+  padding: 0 4px;
+  border-left: 1px solid transparent;
+  &:last-child{
+    border-left:$border;
+    padding: 0 6px;
+  }
+}
+.sort--anchor{
+  text-decoration: none;
+  color: $color_1;
+  border-bottom:  1px dashed $color_1;
+}
